@@ -1,0 +1,20 @@
+﻿@model IEnumerable<PhotoUp.Models.Photo>
+@{
+    ViewBag.Title = "Index";
+}
+
+
+@foreach (var photo in @Model)
+{
+    <article>
+        <figure>
+            <img src="http://dn7skv4dee1t5.cloudfront.net/@photo.PhotoUrl" alt="@photo.Description" />
+            <!--
+            <img src="https://s3.amazonaws.com/betamore-photoup/@photo.PhotoUrl" alt="@photo.Description" />
+            -->
+        </figure>
+        <figcaption>
+            <em>@photo.Description</em> Uploaded by @photo.User on @photo.Created
+        </figcaption>
+    </article>
+}

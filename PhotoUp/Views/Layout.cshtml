@@ -20,11 +20,16 @@
                 <h1><a href="/">PhotoUp</a></h1>
             </div>
             <div class="span4">
-                @if(string.IsNullOrWhiteSpace(Session["user"] as string)){
-                    @Html.ActionLink("Login", "Index", "Session")
-                }else{
-                    @:logged in as @Html.ActionLink(Session["user"] as string, "Index", "Session")
-                }
+                <ul>
+                    <li>
+                        @if(string.IsNullOrWhiteSpace(Session["user"] as string)){
+                            @Html.ActionLink("Login", "Index", "Session")
+                        }else{
+                            @:logged in as @Html.ActionLink(Session["user"] as string, "Index", "Session")
+                        }
+                    </li>
+                    <li>@Html.ActionLink("Upload a Photo", "New", "Photo")</li>
+                </ul>
             </div>
         </div>
         @RenderBody()

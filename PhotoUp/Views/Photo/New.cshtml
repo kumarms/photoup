@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "New";
+}
+
+<form action="/photo" method="post" enctype="multipart/form-data" >
+    <fieldset>
+        <legend>Upload a Photo</legend>
+        <label>
+            Description:
+            <input name="description" />
+        </label>
+        <input type="file" name="photo-file" />
+        <div class="form-actions">
+            <input type="submit" value="upload" />
+        </div>
+    </fieldset>
+</form>
