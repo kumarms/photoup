@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>PhotoUp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Loading Bootstrap -->
+    <link href="http://designmodo.github.io/Flat-UI/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Loading Flat UI -->
+    <link href="http://designmodo.github.io/Flat-UI/css/flat-ui.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="http://franchise.orderup.com/favicon.ico">
+  </head>
+  <body>
+    <div class="container">
+        <div class="row">
+            <div class="span8">
+                <h1><a href="/">PhotoUp</a></h1>
+            </div>
+            <div class="span4">
+                @if(string.IsNullOrWhiteSpace(Session["user"] as string)){
+                    @Html.ActionLink("Login", "Index", "Session")
+                }else{
+                    @:logged in as @Html.ActionLink(Session["user"] as string, "Index", "Session")
+                }
+            </div>
+        </div>
+        @RenderBody()
+    </div>
+      <script src="http://code.jquery.com/jquery-2.0.2.js"></script>
+      <script src="http://designmodo.github.io/Flat-UI/js/bootstrap.min.js"></script>
+  </body>
+</html>

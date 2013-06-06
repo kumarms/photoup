@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Login</h2>
+
+<form action="/session" method="post">
+    <label>
+        Who do you want to be?
+        <input name="user" />
+    </label>
+    <input type="submit" value="login" />
+</form>
+
+<form action="/session/destroy" method="post">
+    <input type="submit" value="logout" />
+</form>
